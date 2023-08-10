@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+body{
+    min-height: 100vh;
+    font-family: 'Lobster', cursive;
+    margin: 0px;
+    padding: 0px;
+}
+.title{
+    text-align: center;
+    font-family: 'Alkatra', cursive;
+    margin: 0px;
+  
+}
+.search-form{
+    display:flex;
+    justify-content: center;
+    padding: 10px; 
+   
+}
+.search-button{
+    background-color: #fff;
+    border: none;
+    padding: 15px;
+    margin: 5px;
+    background-color: rgb(129, 66, 80);
+    font-weight: bold;
+    border-radius: 5px;
+    outline: none;
+}
+.search-button :hover{
+    transform: scaleX(2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-value{
+    outline: none;
+    border: none;
+    padding:15px;
+    margin:5px;
+    min-width: 500px;
+    border-radius: 5px;
+    text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-bar{
+    background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+     padding: 20px;
+     margin-bottom: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.country{
+    background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px; 
+    border-radius: 10px;
+    
 }
-
-.App-link {
-  color: #61dafb;
+ul,li{
+    list-style: none;
+    padding:10px; 
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.country-list{
+    margin: auto;
+    display:grid;
+    max-width: 90%;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px 10px;
 }

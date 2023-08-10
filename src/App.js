@@ -1,25 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {useEffect,useState} from 'react';
+import Header from './componets/header';
+import Search from './componets/searchcountry';
+import AddCountry from './componets/addingcountry';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ 
+    const [countryurl,setCountryUrl]=useState('https://restcountries.com/v3.1/all')
+    const[countryname,setCountryName]=useState('')
+    const[countries,setCountries]=useState([])
+    const url='https://restcountries.com/v3.1/name/'
+    const data= async ()=>{
+        const countrydata=await fetch(countryurl)
+        const result =await countrydata.json()
+    
+        setCountries(result)
+    }
+
+    useEffect(  ()=>{  data() },[countryurl] )
+    return(
+        <div>
+            <div className='nav-bar'>
+            <Header/>
+            <Search handleCountryName={setCountryName} url={url} handleCountryUrl={setCountryUrl}/>
+            </div>
+             <AddCountry  countries={countries} countryname={countryname}/>
+        </div>
+    )
+
 }
 
 export default App;
